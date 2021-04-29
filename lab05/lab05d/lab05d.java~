@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+/**
+ * lab05d 
+ * @author Metehan Saçakçý
+ * @version 04.11.2019
+ */ 
+public class lab05d
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+
+      // constants
+
+      // variables
+
+      // program code
+
+   }
+
+} // end class

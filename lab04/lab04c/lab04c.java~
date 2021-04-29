@@ -1,0 +1,68 @@
+import java.util.Scanner;
+
+/**
+ * lab04c
+ * @author Metehan Saçakçý
+ * @version 29.10.2019
+ */ 
+public class lab04c
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+
+      // constants
+
+      // variables      
+      int n;
+      int total;
+      int count;
+      int average;
+      int max;
+      int min;
+      int negativeCounter;
+      
+      // program code
+      n = 0;
+      total = 0;
+      count = 0;
+      average = 0;      
+      max = 0;
+      min = 0;
+      negativeCounter = 0;      
+      while ( count < 150 )
+      {        
+         n = scan.nextInt();
+         if ( n < 0 )
+         {
+            negativeCounter = negativeCounter + 1;            
+         }
+         if ( negativeCounter != 1)
+         {   
+         if ( count == 0 )
+         {
+            max = n;
+            min = n;
+         }         
+         if ( n >= max )
+         {
+            max = n;            
+         }
+         if ( n < min )
+         {
+            min = n;
+         }
+         }
+         count = count + 1;
+         total = total + n;
+      }
+      average = total / count;
+      System.out.println( "Count of numbers: " + count );      
+      System.out.println( "Average of numbers: " + (double) average);
+      System.out.println( "Max number: " + max );
+      System.out.println( "Min number: " + min );      
+      System.out.println( "Negative Counter: " + negativeCounter);
+      
+   }
+   
+} // end class

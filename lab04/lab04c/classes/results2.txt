@@ -1,0 +1,5 @@
+Count of numbers: 150
+Average of numbers: 51.0
+Max number: 98
+Min number: -50
+Negative Counter: 2

@@ -1,0 +1,43 @@
+import java.util.Scanner;
+   /*
+    * Rolling Dice
+    * @author Metehan Saçakçý
+    * @version 24.11.2019
+    */
+public class lab07a
+{
+   public static int roll()
+   {
+      // variables
+      int theCurrentFaceValueOfDice;
+                           
+      // program code
+      
+// Calculate current dice number with Math.random method and return it.
+      theCurrentFaceValueOfDice = ( int ) ( ( Math.random() * 6 ) + 1 );                       
+      return theCurrentFaceValueOfDice;
+   } //end of roll method 
+            
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+      
+      // variables
+      int die1,
+          die2,
+          attemptNumber;
+      // program code
+      attemptNumber = 1;
+      do
+      {
+         die1 = roll();
+         die2 = roll();
+         System.out.println( "Attempt number is " + attemptNumber);
+         System.out.println( "First die's number is " + die1);
+         System.out.println( "Second die's number is " + die2);
+         attemptNumber = attemptNumber + 1;
+      } while ( die1 + die2 != 12 );
+      System.out.println( "We have two six!");
+   }
+   
+}   

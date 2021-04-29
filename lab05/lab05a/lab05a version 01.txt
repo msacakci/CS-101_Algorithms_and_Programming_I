@@ -1,0 +1,88 @@
+import java.util.Scanner;
+
+/**
+ * lab05a
+ * @author Metehan Saçakçý
+ * @version 03.11.2019
+ */ 
+public class lab05a
+{
+   public static void main( String[] args)
+   {
+      Scanner scan = new Scanner( System.in);
+
+      // constants
+
+      // variables
+      int numOne;
+      int numTwo;
+      int numThree;
+      int countOne;
+      int countTwo;
+      int countThree;
+      int spaces;
+      int spaceCount;
+      int spaceLine;
+      int countLine;
+
+      // program code
+      countOne = 0;
+      countTwo = 0;
+      countThree = 0;
+      spaces = 0;
+      numOne = 0;
+      numTwo = 0;
+      numThree = 0;      
+      spaceCount = 0;
+      spaceLine = 0;
+      countLine = 0;
+      System.out.println( "Please enter three numbers respectively:");
+      numOne = scan.nextInt();
+      numTwo = scan.nextInt();
+      numThree = scan.nextInt();
+      spaces = numOne - (2 * numThree);
+      spaceLine = numTwo - (2 * numThree);
+      do
+      {   
+         for( countOne = 0; countOne < numOne; countOne++ )
+         {
+            System.out.print( "*");            
+         }
+         countThree = countThree + 1;
+         System.out.print( "\n");
+      } while ( countThree < numThree);
+      do
+      {
+         countThree = 0;
+         spaceCount = 0;
+         countThree = 0;
+            for ( countThree = 0; countThree < numThree; countThree++)
+         {
+            System.out.print( "*");         
+         }   
+         for ( spaceCount = 0; spaceCount < spaces; spaceCount++)
+         {
+            System.out.print( " ");                 
+         }
+         for ( countThree = 0; countThree < numThree; countThree++)
+         {
+            System.out.print( "*");         
+         }
+         countLine = countLine + 1;
+         System.out.print( "\n");
+      } while ( countLine < spaceLine );
+      countOne = 0;
+      countThree = 0;   
+      do
+      {  
+         
+         for( countOne = 0; countOne < numOne; countOne++ )
+         {
+            System.out.print( "*");            
+         }
+         countThree = countThree + 1;
+         System.out.print( "\n");
+      } while ( countThree < numThree);
+   }
+
+} // end class

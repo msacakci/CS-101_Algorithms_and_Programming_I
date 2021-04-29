@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20190813-220051">
+  <project autorefresh="false" build="classes/" main="lab05d" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="lab05d03.java" package="" timestamp="06-Nov-2019 11:18:04">
+        <select from="1184" to="1184"/>
+        <scroll column="437" row="0"/>
+      </file>
+      <file name="lab05d01.java" package="" timestamp="05-Nov-2019 21:49:12">
+        <select from="1184" to="1184"/>
+        <scroll column="437" row="0"/>
+      </file>
+      <file name="lab05d02.java" package="" timestamp="06-Nov-2019 11:17:50">
+        <select from="1184" to="1184"/>
+        <scroll column="437" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

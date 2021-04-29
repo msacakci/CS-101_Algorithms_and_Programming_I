@@ -1,0 +1,115 @@
+/*
+ *Library
+ */
+public class Library
+{
+   // properties
+   LibraryBook b1,
+               b2,
+               b3,
+               b4;
+   
+   // constructor
+   //LibraryBook b1, LibraryBook b2, LibraryBook b3, LibraryBook b4   
+   public Library ()
+   {
+      b1 = null;
+      b2 = null;
+      b3 = null;
+      b4 = null;
+   }   
+   
+   // methods
+   
+   // To check is there any book.
+   public boolean isEmpty()
+   {
+      if( b1 == null && b2 == null && b3 == null && b4 == null )
+      {
+         return true;
+      }   
+      else
+      {
+         return false;
+      }   
+   }   
+   public String toString()
+   {
+      // variables
+      String result;
+      
+      // program code
+      result = "Book1 = " + "\n" + b1 + "\n" + "Book2 = " + "\n" + b2 + "\n" + "Book3 = " + "\n" + b3 + "\n" + "Book4 = " + "\n" + b4 + "\n";
+      return result;
+   } 
+   
+   // To add title and author.
+   public void add( String title, String author)
+   {
+      if ( b1 == null )
+      {
+         b1 = new LibraryBook ( title, author);
+      }   
+      else if ( b2 == null )   
+      {
+         b2 = new LibraryBook ( title, author);
+      }  
+      else if ( b3 == null )   
+      {
+         b3 = new LibraryBook ( title, author);
+      }   
+      else if ( b4 == null )   
+      {
+         b4 = new LibraryBook ( title, author);
+      }   
+   } 
+   
+   // To remove a book.
+   public void remove( LibraryBook book )
+   {
+      if ( book == b1 )
+      {
+         b1 = null;
+      }
+      else if( book == b2 )
+      {
+         b2 = null;
+      } 
+      else if( book == b3 )
+      {
+         b3 = null;
+      }   
+      else if( book == b4 )
+      {
+         b4 = null;
+      }       
+   }
+   
+   // To find a book from a title.
+   public LibraryBook findByTitle( String title)
+   {
+      if ( title.equals(b1.getTitle()) )
+      {
+         return b1;
+      }
+      else if( title.equals(b2.getTitle()) )
+      {
+         return b2;
+      } 
+      else if( title.equals(b3.getTitle()) )
+      {
+         return b3;
+      }   
+      else if( title.equals(b4.getTitle()) )
+      {
+         return b4;
+      } 
+      else
+      {   
+      return null;
+      }
+   }   
+   
+   
+   
+}   

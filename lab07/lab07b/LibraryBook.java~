@@ -1,0 +1,61 @@
+// header comment
+public class LibraryBook
+{
+   // properties
+   String title,
+          author,
+          dueDate;
+   int timesLoaned;
+   
+   // constructors
+   public LibraryBook( String theTitle, String theAuthor, String theDueDate, int theTimesLoaned)
+   {
+      title = theTitle;
+      author = theAuthor;
+      dueDate = theDueDate;
+      timesLoaned = theTimesLoaned;
+   }   
+   
+   // methods
+   public String toString()
+   {
+      //variable
+      String result;
+      
+      //program code
+      result = ( "" + "Title: " + title + "\n" + "Author: " + author + "\n" + "Due Date: " + dueDate + "\n" + "Times Loaned: " + timesLoaned + "\n" + "" );
+      
+      return result;      
+   }
+   public void loanTheBook( String newDueDate)
+   {
+      // variables
+      
+      //program code
+      dueDate = newDueDate;
+      timesLoaned = timesLoaned + 1;      
+   } 
+   
+   public String returnTheBook()
+   {
+      dueDate = "";
+      return dueDate;
+   }   
+   
+   public int getTimesLoaned()
+   {
+      return timesLoaned;
+   }
+   
+   public boolean onLoan()
+   {
+      if( !dueDate.equals( ""))
+      {
+         return true;
+      }
+      else
+      {
+         return false;
+      }   
+   }   
+}

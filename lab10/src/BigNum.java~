@@ -1,0 +1,265 @@
+/*
+ * Big Numbers
+ */
+public class BigNum
+{
+   // properties
+   int[] list;
+   int bigNumber;
+   String base2;
+   final int SIZE = 4;
+   final int BASE = 2;
+   // constructors
+   /*
+    * Constructor 1: Set big number as 0.
+    */
+   public BigNum()
+   {
+      // variables
+      int index;
+      //program code
+      // 1. Set all basic propert as zero and empty.
+      bigNumber = 0;
+      String base2 = "";
+      // 2. Prepare a empthy list with SIZE value and set all of the memory location as zero.
+      list = new int[ ( SIZE ) ];
+      for( index = 0; index < list.length; index++ )
+      {
+         list[index] = 0;
+      }
+   }
+   /*
+    * Consturctor 2: Build new big number from new string which represent main number.
+    */
+   public BigNum( String baseNumber )
+   {
+      // variables
+      String temp,
+             reversedTemp;
+      int number,
+          index,
+          antiIndex;         
+     
+      // program code
+      // 1. Get big number from converting baseNumber to the integer value.
+      bigNumber = Integer.valueOf( baseNumber);
+      temp = baseNumber;      
+      number = Integer.valueOf( baseNumber);
+           
+      base2 = temp;      
+      antiIndex = 0;
+      // 2. Prepare a empthy list with SIZE value and set all of the memory location as zero.
+      list = new int[ ( SIZE ) ];
+      for( index = 0; index < list.length; index++ )
+      {
+         list[index] = 0;
+      }
+      // 3. Reverse the main big number which is String in order to add them to the list.
+      reversedTemp = "";
+      for( index = temp.length() - 1; index >= 0; index-- )
+      {
+         reversedTemp = reversedTemp + temp.charAt(index);
+      } 
+      // 4. Write every character of reversed temp to list.
+      for( index = 0; index < reversedTemp.length(); index++)
+      { 
+         // Reversed controller: System.out.println( "REVERSED " + reversedTemp.charAt( index));
+         list[index] = reversedTemp.charAt( index) - 48;
+      }      
+   }
+   /*
+    * Constructor 3: Copy constructor (Cloner).
+    */
+   public BigNum( BigNum other)
+   {
+      // variable
+      BigNum newBigNum;
+      String baseNumber,
+             temp,
+             reversedTemp;
+      int index,
+          potential;
+      
+      // program code
+      // 1. Get every property of the other big number and equal it new big number's properties.     
+      baseNumber = String.valueOf(other.bigNumber);
+      base2 = baseNumber;
+      bigNumber = Integer.valueOf( base2);
+      temp = baseNumber;
+      list = new int[ ( other.SIZE ) ];
+      // 2. Create new list from these properties.
+      for( index = 0; index < list.length; index++ )
+      {
+         list[index] = 0;
+      }
+      reversedTemp = "";
+      for( index = temp.length() - 1; index >= 0; index-- )
+      {
+         reversedTemp = reversedTemp + temp.charAt(index);
+      }      
+      for( index = 0; index < reversedTemp.length(); index++)
+      {
+         if( index < list.length )
+         {   
+            potential = reversedTemp.charAt( index);
+            list[index] = potential - 48;
+         }
+      }
+   }   
+   
+   // methods
+   /*
+    * Method 1: to string method. Express every variable with String.
+    */
+   public String toString()
+   {
+      // variables
+      String result;
+      int    index;
+      
+      // program code
+      // 1. Simply create a result String that consisted of required properties.
+      result = "" + "Big Number is " + base2 + "\n" + base2 + "\n";
+      for( index = 0; index < list.length; index++)
+      {
+         result = result + list[ index ] + ", ";
+      }
+      return result;
+   }
+   /*
+    * Method 2: Compare big numbers about their equality.
+    */
+   public boolean equals( BigNum other)
+   { 
+      // 1. Check are the main properties of big numbers are equal or not.
+      if ( bigNumber == other.bigNumber)
+      {
+         return true;
+      }   
+      else
+      {
+         return false;
+      }   
+   }
+   /*
+    * Method 3: Is the big number equals zero or not?
+    */
+   public boolean isZero()
+   {
+      // 1. Check main property of big numbers is equal zero or not.
+      if( bigNumber == 0 )
+      {
+         return true;
+      }
+      else
+      {
+         return false;
+      }   
+   }
+   /*
+    * Method 4: Shift list to the one right location.
+    */ 
+   public void shift( boolean left)
+   {
+      // variables
+      String reversedTemp;
+      int index;
+      if ( left )
+      {
+         base2 = base2 + 0;
+         bigNumber = bigNumber * 10;
+         reversedTemp = "";
+         for( index = base2.length() - 1; index >= 0; index-- )
+         {
+            reversedTemp = reversedTemp + base2.charAt(index);
+         }         
+         for( index = 0; index < reversedTemp.length(); index++)
+         {         
+            list[index] = reversedTemp.charAt( index) - 48;          
+         }                  
+      }   
+   }
+   /*
+    * Method 5: add method. Current big number is added with another big number.
+    */
+   public int add( BigNum other)
+   {
+      // variables
+      long decimalNumber; 
+      long decimalNumber2;
+      long binaryNumber;
+      long binaryNumber2;
+      long divider;     
+      long remainder;
+      long totalBase10;
+      String resultAsString;
+      int result;
+      int index;
+      int potentialSize;
+      // program code
+      decimalNumber = 0;
+      decimalNumber2 = 0;
+      divider = 1;
+      remainder = 0;     
+      binaryNumber = bigNumber;    
+      binaryNumber2 = other.bigNumber;                  
+      // First part
+      // 1. First convert both big numbers to base 10 format in order to sum them.
+      // 1.1. Converting of first main number.
+      while ( binaryNumber != 0 ) 
+      {
+         remainder = binaryNumber % 10;
+         decimalNumber = decimalNumber + remainder * divider;
+         divider = divider * BASE;
+         binaryNumber = binaryNumber / 10;
+      }
+      divider = 1;
+      remainder = 0;
+      // 1.2. Converting of second main number.
+      while ( binaryNumber2 != 0 ) 
+      {
+         remainder = binaryNumber2 % 10;
+         decimalNumber2 = decimalNumber2 + remainder * divider;
+         divider = divider * BASE;
+         binaryNumber2 = binaryNumber2 / 10;
+      }
+      // 2. Take sum of the both big numbers' base 10 version.
+      totalBase10 = decimalNumber + decimalNumber2;
+      
+      //Second part            
+      resultAsString = "";
+      // 3. Convert the total value to the BASE version.
+      while( totalBase10 > 0 )
+      {
+         resultAsString = totalBase10 % BASE + resultAsString;
+         totalBase10 = totalBase10 / BASE;
+      }
+      //Third part
+      // 4. Find the outsider.      
+      potentialSize = 1;
+      for( index = 0; index < SIZE; index++)
+      {   
+         potentialSize = potentialSize * 10;
+      }     
+      result = Integer.valueOf( resultAsString);
+      result = result % potentialSize;
+      bigNumber = result;
+      base2 = String.valueOf( result);
+      return result;                                
+   }
+   /*
+    * Method 6: Compare two big number and give true if current one is bigger than the other.
+    */
+   public boolean isLessThan( BigNum other)
+   {
+      // 1. Compare the both bignumbers and return the result.
+      if( bigNumber < other.bigNumber)
+      {   
+         return true;
+      }
+      else
+      {
+         return false;
+      }   
+   }   
+}   

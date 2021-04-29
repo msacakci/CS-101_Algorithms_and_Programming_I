@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20190813-220051">
+  <project autorefresh="false" build="classes/" main="Die" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Die.java" package="" timestamp="27-Nov-2019 10:45:12">
+        <select from="59" to="59"/>
+        <scroll column="146" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
